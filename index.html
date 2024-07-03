@@ -4,10 +4,65 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Comment System</title>
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+    
+      createApp({
+        data() {
+          return {
+            comments: [
+              {
+                name: 'Lucas',
+                message: 'testando'
+              }
+            ]
+          };
+        },
+        methods: {
+          addComment() {
+            if (this.name && this.message) {
+              this.allComments.push({ name: this.name, message: this.message });
+              this.name = '';
+              this.message = '';
+            }
+          },
+          removeComment(index) {
+            this.allComments.splice(index, 1);
+          }
+        },
+        template: `
+          <div class="container">
+            <h1>Comentários</h1>
+            <hr />
+            <div class="form-todo form-group">
+              <p>
+                <input placeholder="nome" type="text" name="author" class="form-control" v-model="name" />
+              </p>
+              <p>
+                <textarea placeholder="Comentário" name="message" class="form-control" v-model="message"></textarea>
+              </p>
+              <button v-on:click="addComment" type="submit" class="btn btn-primary">Comentar</button>
+            </div>
+            <div class="list-group">
+              <div class="list-group-item" v-for="comment in comments">
+                <span class="comment__author">Autor: <strong>{{ comment.name }}</strong></span>
+                <p>{{ comment.message }}</p>
+                <div>
+                  <a href="#" title="Excluir" v-on:click.prevent="removeComment(index)">Excluir</a>
+                </div>
+              </div>
+            </div>
+            <hr />
+          </div>
+        `
+      }).mount('#app');
+    </script>
   </body>
 </html>
