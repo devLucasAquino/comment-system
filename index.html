@@ -28,17 +28,13 @@
           };
         },
         methods: {
-          addComment() {
-            // if (this.name && this.message) {
-            //   this.allComments.push({ name: this.name, message: this.message });
-            //   this.name = '';
-            //   this.message = '';
-            // }   
+          addComment() { 
             console.log(this.name)
-            console.log(this.message)         
-          },
-          removeComment(index) {
-            this.allComments.splice(index, 1);
+            console.log(this.message)
+            this.comments.push({
+              name: this.name,
+              message: this.message
+            })         
           }
         },
         template: `
