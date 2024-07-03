@@ -17,24 +17,20 @@
       createApp({
         data() {
           return {
-            comments: [
-              {
-                name: 'Lucas',
-                message: 'testando'
-              }
-            ],
+            comments: [],
             name: '',
             message: '',
           };
         },
         methods: {
           addComment() { 
-            console.log(this.name)
-            console.log(this.message)
             this.comments.push({
               name: this.name,
               message: this.message
-            })         
+            })
+            
+            this.name = '';
+            this.message = '';
           }
         },
         template: `
