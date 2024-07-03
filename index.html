@@ -22,16 +22,20 @@
                 name: 'Lucas',
                 message: 'testando'
               }
-            ]
+            ],
+            name: '',
+            message: '',
           };
         },
         methods: {
           addComment() {
-            if (this.name && this.message) {
-              this.allComments.push({ name: this.name, message: this.message });
-              this.name = '';
-              this.message = '';
-            }
+            // if (this.name && this.message) {
+            //   this.allComments.push({ name: this.name, message: this.message });
+            //   this.name = '';
+            //   this.message = '';
+            // }   
+            console.log(this.name)
+            console.log(this.message)         
           },
           removeComment(index) {
             this.allComments.splice(index, 1);
