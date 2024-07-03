@@ -1,5 +1,16 @@
-# Vue 3 + Vite
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=fff&height=120&section=header"/>
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Comment System
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+Este repositorio contem meu primeiro projeto em VueJS, com o objetivo de conhecer o framework com um simples projeto de Sistemas de Comentarios.
+
+## Preview
+
+![Loading...](./src/img/preview.png)
+
+## Tecnologias utilizadas
+
+[![My Skills](https://skillicons.dev/icons?i=html,bootstrap,vue,vite,vscode)](https://skillicons.dev)
+
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=fff&height=120&section=footer"/>
+
